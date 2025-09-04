@@ -1,0 +1,419 @@
+@charset "utf-8";
+
+html {
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+}
+
+* {
+    box-sizing: inherit;
+}
+
+body {
+    font-family: YuMincho, "Zen Old Mincho", serif;
+    font-size: 18px;
+    line-height: 1.5;
+    color: #000000;
+    background-color: #d3b389;
+}
+
+.sticky_header {
+    position: sticky;
+    top: 0;
+    background-color: rgba(214, 137, 54, 0.822);
+    z-index: 100;
+}
+
+
+.container {
+    width: 90%;
+    max-width: 1120px;
+    /* background-color: aqua; */
+    margin: 0 auto;
+    position: relative;
+}
+
+.flex {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+/* ヘッダー */
+header {
+    padding: 27px 0;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: -0.04em;
+}
+
+.logo span {
+    color: rgb(226, 43, 43);
+}
+
+.header_menu {
+    list-style: none;
+}
+
+.header_menu li {
+    margin-left: 40px;
+}
+
+
+
+/* 文字の下線なくす */
+a {
+    text-decoration: none;
+}
+
+/* .heading {
+    font-family: "Dancing Script", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+} */
+
+
+
+/* ハンバーガーメニュー*/
+.menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    /* 初期状態では画面の外に隠れている */
+    width: 200px;
+    height: 100%;
+    background-color: #fafad2;
+    color: #333;
+    transition: right 0.3s ease;
+    /* スライドインのアニメーション */
+    padding: 20px;
+    box-sizing: border-box;
+    z-index: 10;
+    display: none;
+}
+
+/* メニューが開いているとき */
+.menu.open {
+    right: 0;
+}
+
+/* ボタンのスタイル */
+.hamburger {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 30px;
+    cursor: pointer;
+    z-index: 20;
+}
+
+.hamburger span {
+    display: block;
+    height: 3px;
+    width: 100%;
+    background-color: #333;
+    margin: 5px 0;
+    transition: 0.4s;
+}
+
+/* バツ印に変化するスタイル */
+.hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* メニューリストのスタイル */
+.menu ul {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 80px;
+}
+
+.menu li {
+    padding: 20px 0;
+    border-bottom: 1px solid #444;
+}
+
+.menu li a {
+    color: #333;
+    text-decoration: none;
+    display: block;
+}
+@media only screen and (max-width: 768px) {
+    header .container {
+        justify-content: center;
+    }
+
+    .header_menu li {
+        margin: 20px 16px 0;
+    }
+    .menu {
+        display: block;
+    }
+    .hoge {
+        display: none;
+    }
+}
+
+
+/* メイン */
+#hero {
+    background-image: url(../img/08.jpg);
+    background-position: center;
+    background-size: cover;
+    height: 540px;
+    border-radius: 30px;
+    margin-bottom: 90px;
+}
+
+.hero_inner {
+    width: 800px;
+    margin: 0 auto;
+}
+
+@media only screen and (max-width: 768px) {
+    #hero {
+        height: 460px;
+    }
+
+    .hero_inner p {
+        font-size: 15px;
+    }
+
+    .hero_inner h1 {
+        font-size: 17px;
+    }
+}
+
+/* アバウト */
+#about {
+    margin-bottom: 120px;
+}
+
+.title {
+    font-size: 20px;
+    font-weight: 500;
+    color: #000000;
+    margin-bottom: 40px;
+}
+
+#about h3 {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 60px;
+}
+
+.column-2 {
+    width: 48%;
+}
+
+.text {
+    line-height: 2;
+}
+
+.concept-img {
+    background-image: url(../img/07.jpg);
+    background-position: center;
+    background-size: cover;
+    height: 340px;
+    border-radius: 20px;
+}
+
+/* .heading {
+    font-family: "Dancing Script", serif;
+    font-size: 200px;
+    font-weight: 700;
+    color: #80BA4A;
+    opacity: 0.1;
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translateY(-30%);
+    z-index: -1;
+} */
+
+@media only screen and (max-width: 768px) {
+    #about h3 {
+        font-size: 24px;
+        line-height: 1.7;
+    }
+
+    .column-2 {
+        width: 100%;
+    }
+
+    .text {
+        line-height: 15px;
+        line-height: 1.7;
+    }
+
+    .concept-img {
+        margin-top: 30px;
+    }
+}
+
+/* サービス */
+#service {
+    margin-bottom: 120px;
+}
+
+.service_inner {
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.column-40 {
+    width: 40%;
+}
+
+.column-55 {
+    width: 55%;
+}
+
+#service img {
+    border-radius: 20px;
+}
+
+#service h3 {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 24px;
+}
+
+@media only screen and (max-width: 768px) {
+    .column-40 {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+
+    .column-55 {
+        width: 100%;
+    }
+
+    #service h3 {
+        font-size: 17px;
+    }
+}
+
+/* カンパニー */
+#company {
+    margin-bottom: 120px;
+}
+
+#company dl {
+    max-width: 900px;
+    margin-left: auto;
+}
+
+#company dt {
+    width: 30%;
+    /* background-color: blueviolet; */
+    padding: 48px;
+    font-weight: 500;
+    border-bottom: solid 1px #D2ECBA;
+}
+
+#company dd {
+    width: 70%;
+    padding: 48px 0;
+    /* background-color: #80BA4A; */
+    border-bottom: solid 1px #D2ECBA;
+}
+
+@media only screen and (max-width: 768px) {
+    #company dl {
+        font-size: 13px;
+    }
+}
+
+/* ボトム */
+.column1 {
+    background-image: url(../img/01.jpg);
+    background-position: center;
+    background-size: cover;
+    width: 24%;
+    height: 270px;
+    border-radius: 20px;
+}
+
+.column2 {
+    background-image: url(../img/13.jpg);
+    background-position: center;
+    background-size: cover;
+    width: 24%;
+    height: 270px;
+    border-radius: 20px;
+}
+
+.column3 {
+    background-image: url(../img/05.jpg);
+    background-position: center;
+    background-size: cover;
+    width: 24%;
+    height: 270px;
+    border-radius: 20px;
+}
+
+.column4 {
+    background-image: url(../img/06.jpg);
+    background-position: center;
+    background-size: cover;
+    width: 24%;
+    height: 270px;
+    border-radius: 20px;
+}
+
+
+@media only screen and (max-width: 768px) {
+
+    .column-a,
+    .column-b,
+    .column-c,
+    .column-d {
+        width: 48%;
+        height: 140px;
+        margin: 1%;
+    }
+}
+
+/* フッター */
+footer {
+    text-align: center;
+    margin: 90px 0;
+}
+
+.copyright {
+    font-size: 12px;
+    margin-top: 40px;
+}
+
+#goto {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+}
+
+#goto a {
+    display: block;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    background-color: #faf9f4;
+    border-radius: 50%;
+    text-decoration: none;
+    color: gray;
+    box-shadow: 3px 3px 3px #333;
+}
